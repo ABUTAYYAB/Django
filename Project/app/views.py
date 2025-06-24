@@ -1,5 +1,6 @@
 from django.shortcuts import render 
 from django.http import HttpResponse
+from .models import ChaiVariety
 
 
 
@@ -7,4 +8,10 @@ from django.http import HttpResponse
 
 
 def home(request):
-  return render(request, 'website/index.html')
+  return render(request, 'app.html')
+
+
+
+def all_chai(request):
+  chais = ChaiVariety.objects.all()
+  return render(request, 'chai/all_chai.html', {'chais': chais})

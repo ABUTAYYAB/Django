@@ -1,18 +1,20 @@
+{% load static tailwind_tags %}
 {% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <title>{% block title %}My Website{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      {% tailwind_css %}
 
   </head>
   <body>
     {% block content %}
-      <h1>Welcome to my website!</h1>
+      <h1 class="flex items-center bg-blue-500 text-orange-600">Welcome to my page!</h1>
     {% endblock %}
     <footer>
       {% block footer %}
-        <p>Copyright © 2021</p>
+        <p class=" text-orange-600">Copyright © 2021</p>
       {% endblock %}
     </footer>
   </body>
