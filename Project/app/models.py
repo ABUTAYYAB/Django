@@ -22,3 +22,14 @@ class ChaiVariety(models.Model):
 
   def __str__(self):
     return self.name
+
+
+class CarsVariety(models.Model):
+  
+  TYPES = [
+    ('S', 'sedan'),
+    ('C', 'coupe'),
+  ]
+  name = models.CharField(max_length=100)
+  image = models.ImageField(upload_to='chais/')
+  type = models.CharField(max_length=2, choices=TYPES, default='ML')
