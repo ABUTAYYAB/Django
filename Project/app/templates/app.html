@@ -1,21 +1,36 @@
-{% load static tailwind_tags %}
-{% load static %}
+{% load static tailwind_tags %} {% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <title>{% block title %}My Website{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-      {% tailwind_css %}
-
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    {% tailwind_css %}
   </head>
   <body>
     {% block content %}
-      <h1 class="flex items-center bg-blue-500 text-orange-600">Welcome to my page!</h1>
+    <h1 class="flex items-center bg-blue-500 text-orange-600">
+      Welcome to my page!
+    </h1>
     {% endblock %}
     <footer>
       {% block footer %}
-        <p class=" text-orange-600">Copyright © 2021</p>
-      {% endblock %}
+      <p class="text-orange-600">Copyright © 2021</p>
+
+
+
+
+      {% endblock %} 
+
+      <div class="grid grid-cols-3 gap-4 m-4">
+      {% for car in cars %}
+      <div class="car-item">
+        <img src="{{ car.image.url }}" alt="{{ car.name }}" />
+        <h3>{{ car.name }}</h3>
+        <p>{{ car.type }}</p>
+
+      </div>
+      {% endfor %}
+      </div>
     </footer>
   </body>
 </html>

@@ -1,0 +1,10 @@
+{% extends "app.html" %}
+
+{% for car in carss %}
+  <div class="car-item">
+    <img src="{{ car.image.url }}" alt="{{ car.name }}">
+    <h3>{{ car.name }}</h3>
+    <p>{{ car.type }}</p>
+  </div>
+  
+{% endfor %}

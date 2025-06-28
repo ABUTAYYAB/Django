@@ -3,6 +3,6 @@
 
 
 from django.contrib import admin
-from .models import ChaiVariety
+from .models import CarsVariety
 
-admin.site.register(ChaiVariety)
+admin.site.register(CarsVariety)

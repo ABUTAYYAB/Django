@@ -1,6 +1,6 @@
 from django.shortcuts import render 
 from django.http import HttpResponse
-from .models import ChaiVariety
+from .models import CarsVariety
 
 
 
@@ -12,6 +12,6 @@ def home(request):
 
 
 
-def all_chai(request):
-  chais = ChaiVariety.objects.all()
-  return render(request, 'chai/all_chai.html', {'chais': chais})
+def all_Car(request):
+  car = CarsVariety.objects.all()
+  return render(request, 'app.html', {'cars': car})
